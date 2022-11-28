@@ -1,122 +1,155 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="keywords" content="maps, cartography"/>
-        <title>Eli Ganong</title>
+<html lang="en">
+<head>
+    <title>Golden Gate Parks Mapstyle</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
     
-        
-        <!--Bootstrap stylesheet links -->
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/style.css">
-    </head>
+    <link rel="stylesheet" href="./lib/scrollmap.css">
+    <link rel="stylesheet" href="./lib/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&family=Niconne&display=swap" rel="stylesheet"> 
+
+</head>
 <body>
-    <nav class="navbar navbar-expand-sm navbar-inverse">
-        <div class="container-fluid">
-            <a class="navabr-brand" href="#">Eli's Portfolio</a>
-          
-            <div id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="About.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="Resume.html">Resume</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="Contact.html">Contact</a>
-                    </li>
-                </ul>
+    <div class="content">
+        <!--title block, background image is title image-->
+        <div class="row" style="background-image:url(img/titlea.png)">
+            <div class="center title">
+                <!--title text-->
+                <h1>Parks Poster Map Style</h1>
+                <!--subtitle or author-->
+                <p class="author">Eli Ganong</p>
             </div>
         </div>
-    </nav>
-
-    <div class="jumbotron">
-        <div class="container">
-            <h2>Eli Ganong | Student</h2>
-            <p>A collection of projects and research.</p>
-        </div>
-    </div>
-    <!--end nav bar, begin content sections-->
-    <div class="container">
+        <!--text block-->
         <div class="row">
-            <!--AFRICA-->
-            <div class="col-md-4">
-                <div class="card">
-                    <a href="portfolio/AfricaMap.html">
-                        <img class="card-img-top" src="assets/Africa Map.png" alt="Africa Reference Map">
-					</a>
-                    <div class="card-body">
-                        <h4 class="card-title">African Reference Map</h4>
-                        <a href="AfricaMap.html" class="btn btn-primary">See Detail</a>
+            <div class="center">
+                <p>The Mapbox style that I have created is called <b>Golden Gate Parks</b> and is inspired by Michael Schwab's graphic designs.</p>
+            </div>
+        </div>
+        <!--image block-->
+        <div class="row">
+            <div class="center">
+                <img class="fit" src="img/posterinspo.png">
+                <p>I drew inspiration from this set of posters designed for the various parks in the San Francisco Bay area.</p>
+            </div>
+        </div>
+        <!--side-by-side image and text block-->
+        <div class="row">
+            <div class="left">
+                <p class="vert-center">In the map, colors for roads, terrain, and water are taken from the posters. The font used in the labels comes from national parks.</p>
+            </div>
+            <div class="right">
+                <img class="fit" src="img/boundrybay.png">
+            </div>
+        </div>
+        <!--bootstrap carousel, centered-->
+        <div class="row">
+            <div class="center-wide">
+                <p>The map reveals more details and stylization as you zoom in.</p>
+                <!--slideshow of images, also known as a carousel-->
+                <!--remove "carousel-dark" if you want a lighter version of the carousel-->
+                <div id="carousel" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                    <!--indicator buttons at the bottom of the carousel that show the total number of slides-->
+                    <div class="carousel-indicators">
+                        <!--there should be as many of these buttons as there are slides in your carousel-->
+                        <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#carousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                        <button type="button" data-bs-target="#carousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
                     </div>
+                    <!--images in the carousel-->
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="img/australia.png" class="w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/South aus.png" class="w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/Midzoomaus.png" class="w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/portlandaus.png" class="w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/townlevelaus.png" class="w-100" alt="...">
+                        </div>
+                    </div>
+                    <!--previous/next buttons that allow users to click from one slide to the next-->
+                    <button id="prev-button" class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button id="next-button" class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
             </div>
-            <!--Washington SKI-->
-            <div class="col-md-4">
-                <div class="card">
-                    <a href="portfolio/WashingtonMap.html">
-                        <img class="card-img-top" src="assets/Washington Map.png" alt="WA ski map"></a>
-                    <div class="card-body">
-                        <h4 class="card-title">Washington Ski Map</h4>
-                        <a href="WashingtonMap.html" class="btn btn-primary">See Detail</a>
+        </div>
+        <!--background images with text scrolling over them-->
+        <div class="scroll-container">    
+            <!--background images-->
+            <div class="background-item">
+                <!--data-slide property used to specify when the background should first-->
+                <img src="img/Sanfran.png" data-slide="0" class="fill vert-center">
+                <img src="img/Vancouver.png" data-slide="1" class="fill vert-center hidden">
+                <img src="img/Maui.png" data-slide="2" class="fill vert-center hidden">
+                <img src="img/Madison.png" data-slide="3" class="fill vert-center hidden">
+            </div>
+            <!--foreground text blocks-->
+            <div class="foreground-item no-event">
+                <div class="row">
+                    <div class="center background-transparent rounded">
+                        <p class="no-margin">Explore how the style looks across a few different cities, starting with San Francisco.</p>
                     </div>
                 </div>
-            </div>
-            <!--CLIMATE REFUGEE-->
-            <div class="col-md-4">
-                <div class="card">
-                    <a href="portfolio/ClimateRefugees.html">
-                        <img class="card-img-top" src="assets/Climate Refugees.png" alt="Central American Climate Refugees"></a>
-                    <div class="card-body">
-                        <h4 class="card-title">Central American Climate Refugees</h4>
-                        <a href="ClimateRefugees.html" class="btn btn-primary">See Detail</a>
+                <div class="row">
+                    <div class="left background-transparent rounded">
+                        <p class="no-margin">Or the urban inlets of Vancouver!</p>
                     </div>
                 </div>
-            </div>
-            <!--OYSTER-->
-            <div class="col-md-4">
-                <div class="card">
-                    <a href="">
-                        <img class="card-img-top" src="assets/Oyster project.png" alt="Native Oyster Research Project"></a>
-                    <div class="card-body">
-                        <h4 class="card-title">Native Oyster Research Project</h4>
-                        <a href="NativeOyster.html" class="btn btn-primary">See Detail</a>
+                <div class="row">
+                    <div class="center background-transparent rounded">
+                        <p class="no-margin">The island of Maui.</p>
                     </div>
                 </div>
-            </div>
-            <!--Mapbox style-->
-            <div class="col-md-4">
-                <div class="card">
-                    <a href="portfolio/mapboxstyle.html">
-                        <img class="card-img-top" src="assets/Sanfran.png" alt="Mapboxstyle"></a>
-                    <div class="card-body">
-                        <h4 class="card-title">Mapbox Style</h4>
-                        <a href="inserthtm" class="btn btn-primary">See Detail</a>
-                    </div>
-                </div>
-            </div>
-	<!--MEXICO-->
-            <div class="col-md-4">
-                <div class="card">
-                    <a href="portfolio/MexicoMap.html">
-                        <img class="card-img-top" src="assets/Mexico Map.png" alt="Mexico's GMO Corn"></a>
-                    <div class="card-body">
-                        <h4 class="card-title">Mexican GMO Corn</h4>
-                        <a href="MexicoMap.html" class="btn btn-primary">See Detail</a>
+                <div class="row">
+                    <div class="left background-transparent rounded">
+                        <p class="no-margin">Or back in Madison, Wisconsin.</p>
                     </div>
                 </div>
             </div>
         </div>
+        <!--mapbox iframe-->
+        <div class="row sm-margin">
+            <div class="center-wide">
+                <p>Interact with the entire map.</p>
+                <iframe src="https://api.mapbox.com/styles/v1/eganong/clb1162nf000o14rss0ng6f8z.html?title=view&access_token=pk.eyJ1IjoiZWdhbm9uZyIsImEiOiJjbDl5bmJ0MmYwNmU2M3JxbnFzeXl5czdtIn0.wZ9y4W--6hm8s8SAN1N3fg&zoomwheel=true&fresh=true#4.05/16.06/81.25/8.8" class="fit" ></iframe>
+            </div>
+        </div>
+        <!--text block-->
+        <div class="row no-margin">
+            <div class="center">
+                <div class="credits">
+                    <hr>
+                    <p><b>Credits:</b></p>
+                    <p>Map created with Mapbox Studio</p>
+                    <p>Data from openstreetmap</p>
+                </div>
+            </div>
+        </div>
+
     </div>
-    <!--put your external script links here-->
-    <script type="text/javascript" src="lib/jquery-3.5.1.min.js"></script>
-    <script type="text/javascript" src="lib/bootstrap.min.js"></script>
-   
+
+<script type="text/javascript" src="./lib/scrollmap.js"></script>
+<script type="text/javascript" src="./lib/bootstrap.min.js"></script>
+
 </body>
 </html>
